@@ -36,6 +36,13 @@ namespace TourismMongoDB.Controllers
             address.City = c;
             return _addressService.Create(address);
         }
-
+        [HttpPut]
+        public ActionResult<Address> Update(string id, Address address)
+        {
+            var a = _addressService.Get(id);
+            if(a == null) return NotFound();
+            _addressService.Update(id, address);
+            return Ok();
+        }
     }
 }

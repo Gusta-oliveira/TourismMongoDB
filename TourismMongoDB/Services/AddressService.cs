@@ -23,6 +23,11 @@ namespace TourismMongoDB.Services
             _address.InsertOne(address);
             return address;
         }
+        public void Update(string id, Address address)
+        {
+            _address.ReplaceOne(a => a.Id == id, address);
+        }
+        
 
 
     }

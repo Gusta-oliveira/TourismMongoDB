@@ -39,5 +39,11 @@ namespace TourismMongoDB.Controllers
             _cityService.Update(id, city);
             return Ok();
         }
+        [HttpDelete]
+        public ActionResult Delete(string id)
+        {
+            _cityService.Delete(id);
+            return Ok();
+        }
     }
 }
